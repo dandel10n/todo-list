@@ -5,7 +5,8 @@ class Task(models.Model):
     #author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=255)
     due_date = models.DateTimeField(blank=True, null=True)
-
+    is_completed = models.BooleanField()
+    
     created_date = models.DateTimeField(auto_now_add=True)
     last_modified_date = models.DateTimeField(auto_now=True)
 
