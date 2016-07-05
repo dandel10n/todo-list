@@ -7,11 +7,13 @@
       <div class="starter-template">
         <h1>{{ task.title }}
           <div class="buttons">
-            {% if not task.is_completed %}
+            {% if user.is_authenticated %}
+              {% if not task.is_completed %}
               <a class="btn btn-default" href="{% url 'task_completed' pk=task.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+              {% endif %}
+              <a class="btn btn-default" href="{% url 'task_edit' pk=task.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a class="btn btn-default" href="{% url 'task_remove' pk=task.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
             {% endif %}
-            <a class="btn btn-default" href="{% url 'task_edit' pk=task.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-            <a class="btn btn-default" href="{% url 'task_remove' pk=task.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
           </div>
         </h1>
         <table>   

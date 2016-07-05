@@ -20,11 +20,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{% url 'task_list' %}">Машин TODO List</a>
+          <a class="navbar-brand" href="{% url 'task_list' %}">TODO List</a>
         </div>
+        {% if user.is_authenticated %}
         <div id="navbar" class="collapse navbar-collapse">
           <a href="{% url 'new_task' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+          <p class="navbar-brand top-menu"><small>Hello, {{ user.username }}(<a id="logout" href="{% url 'logout' %}">Log out</a>)</small></p>
         </div><!--/.nav-collapse --> #}
+        {% else %}
+        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+        {% endif %}
       </div>
     </nav>
 
