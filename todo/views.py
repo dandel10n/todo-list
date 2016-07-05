@@ -44,3 +44,8 @@ def task_remove(request, pk):
     task.delete()
     return redirect('todo.views.task_list')
 
+def task_completed(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    task.is_completed = True
+    task.save()
+    return redirect('todo.views.task_list')

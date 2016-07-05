@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^task/new/$', views.new_task, name='new_task'),
     url(r'^task/(?P<pk>\d+)/edit/$', views.task_edit, name='task_edit'),
     url(r'^task/(?P<pk>\d+)/remove/$', views.task_remove, name='task_remove'),
+    url(r'^task/(?P<pk>\d+)/is_completed/$', views.task_completed, name='task_completed'),
 ]

@@ -10,7 +10,7 @@
         <a class="title {% if task.is_completed %}crossed_out{% endif %}" href="{% url 'task_info' pk=task.pk %}">{{ task.title }}</a>
         <div class="buttons">
           {% if not task.is_completed %}
-            <a class="btn btn-default" href=""><span class="glyphicon glyphicon-ok"></span></a>
+            <a class="btn btn-default" href="{% url 'task_completed' pk=task.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
           {% endif %}
           <a class="btn btn-default" href="{% url 'task_edit' pk=task.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
           <a class="btn btn-default" href="{% url 'task_remove' pk=task.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
