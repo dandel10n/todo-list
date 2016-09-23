@@ -1,5 +1,6 @@
 # todo-list
-I've desided to become a web programmer and it is my study project. Here you can find how to start the progect.
+This is my study project. 
+Here you can find how to start the project.
 
 ## How to clone the project
 
